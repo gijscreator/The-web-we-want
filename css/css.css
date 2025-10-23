@@ -1,0 +1,110 @@
+/* 
+CSS written by: Your Name
+
+Most selectors you’ll need are here. Feel free to add as many as you need.
+*/
+html {
+	--variables: "here";
+}
+
+body {
+	
+}
+
+time {
+	
+}
+a:link {
+	
+}
+a:hover {
+	
+}
+a:focus-visible {
+	
+}
+a[href^="mailto:"] {
+	
+}
+
+header {
+	
+}
+
+h1 {
+	
+}
+
+h2 {
+	
+}
+
+h3 {
+	
+}
+
+h4 {
+	
+}
+
+main {
+	
+}
+
+section {
+	
+}
+
+ul {
+	
+}
+li {
+	
+}
+li a {
+	
+}
+li img {
+	
+}
+
+aside {
+	
+}
+aside:nth-of-type(2) {
+	
+}
+
+details {
+	
+}
+details[open] {
+	
+}
+summary {
+	
+}
+summary:focus-visible {
+	
+}
+
+footer {
+	
+}
+
+footer section {
+	
+}
+
+[hidden] {
+	
+}
+label {
+	
+}
+input[type="checkbox"] {
+	
+}
+input[type="range"] {
+	
+}
