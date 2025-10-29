@@ -1,0 +1,136 @@
+/* 
+CSS written by: Gijs
+
+Most selectors you’ll need are here. Feel free to add as many as you need.
+*/
+
+:root {
+--background-color-body: rgb(0, 0, 0);
+--background-color-boxes: rgb(66, 154, 255);
+--primary-text: rgb(255, 255, 255);
+--font-fam-main: sans-serif;
+}
+
+html {
+	color: var(--primary-text);
+	font-family: var(--font-fam-main);
+}
+
+body {
+	display: grid;
+	grid-template-columns: 1fr;
+	width: 90vw;
+	background-color: var(--background-color-body);
+	margin: 0 auto;
+	gap: 20px;
+	
+}
+
+time {
+	
+}
+p a {
+	background-color: green;
+	text-decoration: none;
+	color: white;
+	
+
+}
+a:hover {
+	
+}
+a:focus-visible {
+	
+}
+a[href^="mailto:"] {
+	
+}
+
+header {
+	margin-top: 20px;
+	background-color: var(--background-color-boxes);
+	border-radius: 10vw 1vw 10vw 1vw;
+	text-align: center;
+}
+
+h1 {
+	font-size: 2rem;
+
+	span:nth-of-type(2) {
+		color: white
+	}
+}
+
+h2 {
+	
+}
+
+h3 {
+	
+}
+
+h4 {
+	
+}
+
+main {
+	background-color: var(--background-color-boxes);
+}
+
+section {
+	background-color: var(--background-color-boxes);
+}
+
+ul {
+	
+}
+li {
+	
+}
+li a {
+	
+}
+li img {
+	
+}
+
+aside {
+	background-color: var(--background-color-boxes);
+}
+aside:nth-of-type(2) {
+	
+}
+
+details {
+	
+}
+details[open] {
+	
+}
+summary {
+	
+}
+summary:focus-visible {
+	
+}
+
+footer {
+	background-color: var(--background-color-boxes);
+}
+
+footer section {
+	
+}
+
+[hidden] {
+	
+}
+label {
+	
+}
+input[type="checkbox"] {
+	
+}
+input[type="range"] {
+	
+}
