@@ -1,0 +1,2242 @@
+@import url('https://webfonts.typotheque.com/WF-023273-012632.css?1');
+
+
+html {
+	--unit: 1.111111;
+	--radius: 5;
+	--animcolor: deeppink;
+	--bg: white;
+}
+
+body {
+	font-family:"Edge Sans 9",Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+	font-size: 1.414em;
+	margin: calc( var(--unit) * 5dvh) calc( var(--unit) * 10dvw) calc( var(--unit) * 20dvh) calc( var(--unit) * 30dvw);
+	@media(width<40em) {
+		margin: 0 calc( var(--unit) * 5dvw) calc( var(--unit) * 20dvh) calc( var(--unit) * 5dvw);
+	}
+	position: relative;
+	background: #ebebeb;
+	font-weight: 300;
+}
+a:link,
+a:visited {
+	color: var(--animcolor);
+}
+a:hover,
+a:focus {
+	background: var(--animcolor);
+	color: white;
+}
+a:focus {
+	outline: .2em dashed var(--animcolor);
+}
+p {
+	max-width: 35em;
+}
+
+header {
+	margin: 0 0 max(calc(var(--unit) * 5dvw), 6em);
+}
+h1 {
+	font-weight: 100;
+	font-size: 7dvw;
+	line-height: 1;
+	margin: calc( var(--unit) * 30dvw) 0 0;
+	@media(width<40em) {
+		margin: 0;
+		padding-top: calc(var(--unit) * 95dvw);
+		font-size: 11dvw;
+	}
+	text-transform: capitalize;
+}
+h1 + p {
+	margin: 0 0 calc(var(--unit) * 5dvw);
+	font-style: italic;
+}
+time {
+	display: inline-block;
+}
+header a {
+	border: 1px solid;
+	padding: 1em;
+	border-radius: 2em;
+}
+h2, h3, h4 {
+	font-weight: 100;
+}
+h2 {
+	font-size: clamp(2em, 7dvw,4em);
+	line-height: 0.8;
+}
+h3 {
+	font-size: clamp(1.414em, 5dvw,3em);
+	line-height: 1;
+}
+
+
+[id="sessions"] ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	margin: 0;
+	padding: 0;
+	gap: 1em;
+}
+[id="sessions"] li {
+	display: flex;
+	flex-direction: column;
+}
+[id="sessions"] img {
+	width: 100%;
+	order: -1;
+}
+
+
+
+:where(body,header,h1,h1 span,h1+p,time,main,h2,section,aside,footer,details:nth-of-type(1),details:nth-of-type(2),details:nth-of-type(2) summary,details:nth-of-type(1) summary)::before,
+:where(body,header,h1,h1 span,h1+p,time,main,h2,section,aside,footer,details:nth-of-type(1),details:nth-of-type(2),details:nth-of-type(2) summary,details:nth-of-type(1) summary)::after {
+	content: "";
+	box-sizing: border-box;
+	position: fixed;
+	@media(width<40em) {
+		position: absolute;
+		--radius:12;
+	}
+	left: calc(var(--unit) * var(--radius) * 1dvw);
+	top: calc(var(--unit) * var(--radius) * 1dvw);
+	width: calc( var(--unit) * var(--radius) * 1dvw);
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 1px solid var(--animcolor);
+	background: 
+		linear-gradient(to right, var(--bg), var(--bg) 46%, transparent 46%),
+		linear-gradient(var(--bg), var(--bg) 46%, var(--animcolor) 46%, var(--animcolor) 54%, var(--bg) 54%);
+	@media (prefers-reduced-motion: reduce) {
+		animation-play-state: paused !important;
+	}
+	animation-duration: 12s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	@supports (animation-timeline: scroll()) {
+		animation-iteration-count: 1;
+	}
+	@media(width>40em) {
+		animation-timeline: scroll();
+	}
+}
+::after,
+::before {
+	mix-blend-mode: darken;
+}
+
+
+/* Top position */
+:where(header,main > h2:first-of-type,footer,details:nth-of-type(2))::before,
+:where(header,main > h2:first-of-type,footer,details:nth-of-type(2))::after {
+	top: calc( var(--unit) * var(--radius) * 1dvw + (var(--unit) * var(--radius) * 1dvw));
+}
+:where(h1,aside:first-of-type > h2:first-of-type,main section:first-of-type,aside details:nth-of-type(1) summary)::before,
+:where(h1,aside:first-of-type > h2:first-of-type,main section:first-of-type,aside details:nth-of-type(1) summary)::after {
+	top: calc( var(--unit) * var(--radius) * 2dvw + (var(--unit) * var(--radius) * 1dvw));
+}
+:where(h1 span)::before,
+:where(h1 span)::after {
+	top: calc( var(--unit) * var(--radius) * 3dvw + (var(--unit) * var(--radius) * 1dvw));
+}
+:where(h1+p,aside:nth-of-type(2) > h2:first-of-type,main section:nth-of-type(2),details:nth-of-type(2) summary)::before,
+:where(h1+p,aside:nth-of-type(2) > h2:first-of-type,main section:nth-of-type(2),details:nth-of-type(2) summary)::after {
+	top: calc( var(--unit) * var(--radius) * 4dvw + (var(--unit) * var(--radius) * 1dvw));
+}
+:where(time,aside)::before,
+:where(time,aside)::after {
+	top: calc( var(--unit) * var(--radius) * 5dvw + (var(--unit) * var(--radius) * 1dvw));
+}
+
+/* Left position */
+:where(h1 span:nth-of-type(2),time:nth-of-type(2),main,h2:first-of-type)::before,
+:where(h1 span:nth-of-type(2),time:nth-of-type(2),main,h2:first-of-type)::after {
+	left: calc( var(--unit) * var(--radius) * 1dvw + (var(--unit) * var(--radius) * 1dvw));
+}
+:where(h1 span:nth-of-type(3),footer,footer h2,main section:first-of-type,main section:nth-of-type(2),aside)::before,
+:where(h1 span:nth-of-type(3),footer,footer h2,main section:first-of-type,main section:nth-of-type(2),aside)::after {
+	left: calc( var(--unit) * var(--radius) * 2dvw + (var(--unit) * var(--radius) * 1dvw));
+}
+:where(h1 span:nth-of-type(4),aside:nth-of-type(2),details,details:nth-of-type(2) summary,aside details:nth-of-type(1) summary)::before,
+:where(h1 span:nth-of-type(4),aside:nth-of-type(2),details,details:nth-of-type(2) summary,aside details:nth-of-type(1) summary)::after {
+	left: calc( var(--unit) * var(--radius) * 3dvw + (var(--unit) * var(--radius) * 1dvw));
+}
+
+
+
+
+body::before { animation-name: --a1a; }
+body::after { animation-name: --a1b; }
+
+
+@keyframes --a1a {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 0deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 0deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 0deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 180deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 0deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 0deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 180deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 0deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+@keyframes --a1b {
+	0%,6.6% { /* t */
+		rotate: 90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 180deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 180deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 90deg;
+	}
+}
+
+main::before { animation-name: --a2a; }
+main::after { animation-name: --a2b; }
+
+@keyframes --a2a {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 180deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 180deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 180deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 180deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 135deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 180deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 180deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 135deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 180deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+@keyframes --a2b {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 0deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 0deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 45deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+
+footer h2::before { animation-name: --a3a; }
+footer h2::after { animation-name: --a3b; }
+
+@keyframes --a3a {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 180deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 180deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 180deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 0deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+@keyframes --a3b {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 0deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 0deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 45deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 0deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 45deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 0deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 0deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 45deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+
+details:first-of-type::before { animation-name: --a4a; }
+details:first-of-type::after { animation-name: --a4b; }
+
+@keyframes --a4a {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 180deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 180deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 180deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 0deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 180deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 180deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 0deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 180deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+@keyframes --a4b {
+	0%,6.6% { /* t */
+		rotate: 90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 0deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 0deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 90deg;
+	}
+}
+
+header::before { animation-name: --b1a; }
+header::after { animation-name: --b1b; }
+
+@keyframes --b1a {
+	0%,6.6% { /* t */
+		rotate: -90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -45deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -45deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -90deg;
+	}
+}
+@keyframes --b1b {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+
+main > h2:first-of-type::before { animation-name: --b2a; }
+main > h2:first-of-type::after { animation-name: --b2b; }
+
+@keyframes --b2a {
+	0%,6.6% { /* t */
+		rotate: 90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -0deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -0deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 45deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -180deg;
+	}
+}
+@keyframes --b2b {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 90deg;
+	}
+}
+
+footer::before { animation-name: --b3a; }
+footer::after { animation-name: --b3b; }
+
+@keyframes --b3a {
+	0%,6.6% { /* t */
+		rotate: 90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -180deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -180deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -180deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -0deg;
+	}
+}
+@keyframes --b3b {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -135deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 90deg;
+	}
+}
+
+details:nth-of-type(2)::before { animation-name: --b4a; }
+details:nth-of-type(2)::after { animation-name: --b4b; }
+
+@keyframes --b4a {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -135deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -135deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -135deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -90deg;
+	}
+}
+@keyframes --b4b {
+	0%,6.6% { /* t */
+		rotate: -90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+
+h1::before { animation-name: --c1a; }
+h1::after { animation-name: --c1b; }
+
+@keyframes --c1a {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -180deg;
+	}
+}
+@keyframes --c1b {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 45deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+
+aside:nth-of-type(1) h2::before { animation-name: --c2a; }
+aside:nth-of-type(1) h2::after { animation-name: --c2b; }
+
+@keyframes --c2a {
+	0%,6.6% { /* t */
+		rotate: -90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -90deg;
+	}
+}
+@keyframes --c2b {
+	0%,6.6% { /* t */
+		rotate: 90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 0deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 45deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 0deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 90deg;
+	}
+}
+
+main section:nth-of-type(1)::before { animation-name: --c3a; }
+main section:nth-of-type(1)::after { animation-name: --c3b; }
+
+@keyframes --c3a {
+	0%,6.6% { /* t */
+		rotate: -90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -135deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -90deg;
+	}
+}
+@keyframes --c3b {
+	0%,6.6% { /* t */
+		rotate: 90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 180deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 180deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 135deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 180deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 90deg;
+	}
+}
+
+aside details:nth-of-type(1) summary::before { animation-name: --c4a; }
+aside details:nth-of-type(1) summary::after { animation-name: --c4b; }
+
+@keyframes --c4a {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -0deg;
+	}
+}
+@keyframes --c4b {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 135deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 135deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+
+h1 span:nth-of-type(1)::before { animation-name: --d1a; }
+h1 span:nth-of-type(1)::after { animation-name: --d1b; }
+
+@keyframes --d1a {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 180deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+@keyframes --d1b {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 180deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+
+h1 span:nth-of-type(2)::before { animation-name: --d2a; }
+h1 span:nth-of-type(2)::after { animation-name: --d2b; }
+
+@keyframes --d2a {
+	0%,6.6% { /* t */
+		rotate: -90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -0deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -45deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -135deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -45deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -0deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -90deg;
+	}
+}
+@keyframes --d2b {
+	0%,6.6% { /* t */
+		rotate: 90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 90deg;
+	}
+}
+
+h1 span:nth-of-type(3)::before { animation-name: --d3a; }
+h1 span:nth-of-type(3)::after { animation-name: --d3b; }
+
+@keyframes --d3a {
+	0%,6.6% { /* t */
+		rotate: -90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -180deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 180deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -45deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -180deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -90deg;
+	}
+}
+@keyframes --d3b {
+	0%,6.6% { /* t */
+		rotate: 90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -135deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -135deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 90deg;
+	}
+}
+
+h1 span:nth-of-type(4)::before { animation-name: --d4a; }
+h1 span:nth-of-type(4)::after { animation-name: --d4b; }
+
+@keyframes --d4a {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -135deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 0deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+@keyframes --d4b {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 0deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+
+h1 + p::before { animation-name: --e1a; }
+h1 + p::after { animation-name: --e1b; }
+
+@keyframes --e1a {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 180deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+@keyframes --e1b {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 45deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 180deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 45deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 45deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 45deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+
+aside:nth-of-type(2) h2::before { animation-name: --e2a; }
+aside:nth-of-type(2) h2::after { animation-name: --e2b; }
+
+@keyframes --e2a {
+	0%,6.6% { /* t */
+		rotate: -90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 0deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 0deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -90deg;
+	}
+}
+@keyframes --e2b {
+	0%,6.6% { /* t */
+		rotate: 90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -0deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 0deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 0deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -0deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 90deg;
+	}
+}
+
+main section:nth-of-type(2)::before { animation-name: --e3a; }
+main section:nth-of-type(2)::after { animation-name: --e3b; }
+
+@keyframes --e3a {
+	0%,6.6% { /* t */
+		rotate: -90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -180deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -180deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -90deg;
+	}
+}
+@keyframes --e3b {
+	0%,6.6% { /* t */
+		rotate: 90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -180deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 180deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 180deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 180deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -180deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 90deg;
+	}
+}
+
+aside details:nth-of-type(2) summary::before { animation-name: --e4a; }
+aside details:nth-of-type(2) summary::after { animation-name: --e4b; }
+
+@keyframes --e4a {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -90deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 0deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -90deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -90deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+@keyframes --e4b {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 135deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 135deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 0deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 135deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 135deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+
+time:nth-of-type(1)::before { animation-name: --f1a; }
+time:nth-of-type(1)::after { animation-name: --f1b; }
+
+@keyframes --f1a {
+	0%,6.6% { /* t */
+		rotate: -180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -180deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -90deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -180deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -180deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -180deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -180deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -180deg;
+	}
+}
+@keyframes --f1b {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 0deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 180deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 180deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 180deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 180deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 180deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 0deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 0deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+
+time:nth-of-type(2)::before { animation-name: --f2a; }
+time:nth-of-type(2)::after { animation-name: --f2b; }
+
+@keyframes --f2a {
+	0%,6.6% { /* t */
+		rotate: -90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -135deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -180deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -135deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -135deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -135deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -90deg;
+	}
+}
+@keyframes --f2b {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 180deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -45deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 0deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 0deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 0deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -45deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 180deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 180deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+
+aside:nth-of-type(1)::before { animation-name: --f3a; }
+aside:nth-of-type(1)::after { animation-name: --f3b; }
+
+@keyframes --f3a {
+	0%,6.6% { /* t */
+		rotate: -90deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -0deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -135deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -0deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: -45deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: -90deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: -45deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -0deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -135deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: -90deg;
+	}
+}
+@keyframes --f3b {
+	0%,6.6% { /* t */
+		rotate: 180deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 0deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: -45deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 180deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 180deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 180deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 180deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: -45deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 0deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 0deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 180deg;
+	}
+}
+
+aside:nth-of-type(2)::before { animation-name: --f4a; }
+aside:nth-of-type(2)::after { animation-name: --f4b; }
+
+@keyframes --f4a {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: -90deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: -90deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 0deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: -90deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 0deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 0deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: -90deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 0deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: -90deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: -90deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+@keyframes --f4b {
+	0%,6.6% { /* t */
+		rotate: 0deg;
+	}
+	7.1%, 13.6% { /* h */
+		rotate: 180deg;
+	}
+	14.2%, 20.7% { /* e */
+		rotate: 180deg;
+	}
+	21.3%, 27.8% { /* w */
+		rotate: 0deg;
+	}
+	28.4%, 34.9% { /* e */
+		rotate: 180deg;
+	}
+	35.5%, 42.0% { /* b */
+		rotate: 0deg;
+	}
+	42.6%, 49.1% { /* y */
+		rotate: 0deg;
+	}
+	49.7%, 56.2% { /* o */
+		rotate: 0deg;
+	}
+	56.8%, 63.3% { /* u */
+		rotate: 180deg;
+	}
+	63.9%, 70.4% { /* w */
+		rotate: 0deg;
+	}
+	71.0%, 77.5% { /* a */
+		rotate: 180deg;
+	}
+	78.1%, 84.6% { /* n */
+		rotate: 180deg;
+	}
+	85.2%, 100% { /* t */
+		rotate: 0deg;
+	}
+}
+
+
+
+
+
+
+

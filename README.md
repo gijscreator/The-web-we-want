@@ -5,11 +5,11 @@ The different styles will be shown at random to each new visitor.
 
 ## Rules
 
-- Only CSS.
-- HTML may not be altered (nope, no, no, not possible).
+- Only CSS
+- HTML may not be altered (nope, no, no, not possible)
 - The content will change, see the comments in the HTML
-- Images may only be manipulated with CSS (and images will change).
-- Font files with proper licences may be used (a proper licence must be shown). 
-- No font services may be used.
+- Images may only be manipulated with CSS (and images will change)
+- Font files with proper licences may be used (a proper licence must be shown)
+- Only font-services that are <abbr title="General Data Protection Regulation">GPDR</abbr> compliant are allowed (so no adobe or google fonts, to name a few)
 - No javascript (only CSS, remember?)
-- Think about people’s preferences, please. 
+- Think about people’s preferences when it comes to things like animations and colour schemes, please.
